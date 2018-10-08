@@ -1,0 +1,11 @@
+{
+  "title": "jsonplaceholder",
+  "instance": "web",
+  "event-server": {
+    "protocol": "https",
+    "host": "jsonplaceholder.typicode.com",
+    "ports": [
+      9001
+    ]
+  }
+}
