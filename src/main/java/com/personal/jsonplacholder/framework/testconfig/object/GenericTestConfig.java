@@ -10,6 +10,12 @@ public class GenericTestConfig {
   @SerializedName("instance")
   private String testInstance;
 
+  @SerializedName("title")
+  private String title;
+
+  @SerializedName("server")
+  private GenericServer server;
+
   public GenericTestConfig() {}
 
   public String getTestInstance() {
@@ -18,5 +24,21 @@ public class GenericTestConfig {
 
   public void setTestInstance(final String testInstance) {
     this.testInstance = testInstance;
+  }
+
+  public String getTitle() {
+    return title;
+  }
+
+  public void setTitle(String title) {
+    this.title = title;
+  }
+
+  public GenericServer getServer() {
+    return server;
+  }
+
+  public void setServer(GenericServer server) {
+    this.server = server;
   }
 }

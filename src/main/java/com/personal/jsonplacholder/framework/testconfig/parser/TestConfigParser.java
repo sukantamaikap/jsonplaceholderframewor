@@ -9,12 +9,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.nio.charset.StandardCharsets;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.Assert;
 
 public class TestConfigParser {
   private static final Logger LOG = LoggerFactory.getLogger(TestConfigParser.class);
-  private static String TEST_CONFIG_FILE = "TestConfig.json";
+  private static final String TEST_CONFIG_FILE = "TestConfig.json";
 
   private String testDir;
   private static TestConfigParser testConfigParser;
@@ -25,7 +27,8 @@ public class TestConfigParser {
     final InputStream testConfigFile =
         new FileInputStream(this.testDir + File.separator + TEST_CONFIG_FILE);
 
-    try (final Reader reader = new InputStreamReader(testConfigFile, "UTF-8")) {
+    try (final Reader reader =
+        new InputStreamReader(testConfigFile, StandardCharsets.UTF_8.displayName())) {
       final Gson gson = new GsonBuilder().create();
       this.currentTestConfig = gson.fromJson(reader, GenericTestConfig.class);
       LOG.info("TestConfig found : " + this.currentTestConfig.toString());
