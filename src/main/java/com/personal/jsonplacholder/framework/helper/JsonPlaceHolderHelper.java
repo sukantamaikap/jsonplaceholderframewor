@@ -33,7 +33,7 @@ public class JsonPlaceHolderHelper extends BaseHelper {
 
   @Override
   protected void isServicePresent() {
-    LOG.info("check if event-server is present in \"TestConfig.json\"");
+    LOG.info("check if server is present in \"TestConfig.json\"");
     Assert.assertNotNull(this.server, "server is not present in \"TestConfig.json\"");
   }
 }
